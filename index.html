@@ -30,7 +30,7 @@
             const input = document.getElementById('pgin');
             const input2 = document.getElementById('pgadd');
             const output = document.getElementById('pgout');
-            if (input >= 100 && input <= 899) {
+            if (input <= 100 && input => 899) {
                 displayImage.src = `p/${input1}_${input2}.png`;
             } else {
                 alert('Please enter a number between 100 and 899.');
