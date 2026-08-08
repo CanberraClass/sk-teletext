@@ -1,18 +1,14 @@
-function insertNewImage(imageNumber) {
-    if (imageNumber >= 100 && imageNumber <= 899) {
-        const newImg = document.createElement('pgout');
-        newImg.src = `p/${imageNumber}.png`;
-        newImg.alt = `Image ${imageNumber}`;
-        
-        document.body.appendChild(newImg);
-    }
-}
+document.getElementById('pgtxt').addEventListener('submit', function(event) {
+  // Prevent the form from refreshing the page
+  event.preventDefault(); 
+  
+  // Get the number entered by the user
+  const num = document.getElementById('pgin').value;
+  
+  // Update the image source path
+  document.getElementById('targetImage').src = `p/${num}.png`;
+});
 
-// Example usage: Inserts <img src="p/500.png"> directly into the body
-insertNewImage(500);
-
-// Example usage: Changes the image to p/250.png
-updateImage(250);
 
 function updateText() {
   // 1. Get the value from the input field
