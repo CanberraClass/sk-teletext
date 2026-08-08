@@ -24,18 +24,14 @@
 
        <script>
         const pgtxt = document.getElementById('pgtxt');
-        const input = document.getElementById('pgin');
-        const input2 = document.getElementById('pgadd');
-        const output = document.getElementById('pgout');
-
         // Handle form submission to update the image
         pgtxt.addEventListener('submit', function(e) {
             e.preventDefault(); 
             const input = document.getElementById('pgin');
             const input2 = document.getElementById('pgadd');
             const output = document.getElementById('pgout');
-            if (num1 >= 100 && num1 <= 899) {
-                displayImage.src = `p/${num1}_${num2}.png`;
+            if (input >= 100 && input <= 899) {
+                displayImage.src = `p/${input1}_${input2}.png`;
             } else {
                 alert('Please enter a number between 100 and 899.');
             }
