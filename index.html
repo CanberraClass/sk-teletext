@@ -11,6 +11,7 @@
         <form id="pgtxt">
             <h2>Page Number (P100-P899)</h2>
             <input type="number" id="pgin" min="100" max="899" style="height:18px; width:50px;" maxlength="3" value="100" required>
+            <input type="number" id="pgadd" style="height:18px; width:50px;" maxlength="2" value="1" required>
             <button type="submit">Go!</button>
         </form>
         <br>
@@ -24,24 +25,21 @@
        <script>
         const pgtxt = document.getElementById('pgtxt');
         const input = document.getElementById('pgin');
+        const input2 = document.getElementById('pgadd');
         const output = document.getElementById('pgout');
 
-        // Validate number range 100-899
-        if (num < 100 || num > 899) {
-            alert('Please enter a number between 100 and 899.');
-            return;
-        }
-    
-        // Loop to generate multiple sequential images (_1, _2, _3, etc.)
-        for (let i = 1; i <= count; i++) {
-            const img = document.createElement('img');
-            img.src = `p/${num}_${i}.png`;
-        
-        // Append directly to the span without using wrapper divs
-        container.appendChild(img);
-        }
-    });
-
+        // Handle form submission to update the image
+        imageForm.addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            let num1 = parseInt(input.value, 10);
+            let num2 = parseInt(input2.value, 10);
+            
+            if (num1 >= 100 && num1 <= 899) {
+                displayImage.src = `p/${num1}_${num2}.png`;
+            } else {
+                alert('Please enter a number between 100 and 899.');
+            }
+        });
         // Handle quick links to update the input field value
         document.querySelectorAll('.link').forEach(link => {
             link.addEventListener('click', function(event) {
