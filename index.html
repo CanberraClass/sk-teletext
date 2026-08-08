@@ -29,11 +29,11 @@
         const output = document.getElementById('pgout');
 
         // Handle form submission to update the image
-        imageForm.addEventListener('submit', function(e) {
+        pgtxt.addEventListener('submit', function(e) {
             e.preventDefault(); 
-            let num1 = parseInt(input.value, 10);
-            let num2 = parseInt(input2.value, 10);
-            
+            const input = document.getElementById('pgin');
+            const input2 = document.getElementById('pgadd');
+            const output = document.getElementById('pgout');
             if (num1 >= 100 && num1 <= 899) {
                 displayImage.src = `p/${num1}_${num2}.png`;
             } else {
