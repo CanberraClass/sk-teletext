@@ -6,7 +6,7 @@ document.getElementById('pgtxt').addEventListener('submit', function(event) {
   const num = document.getElementById('pgin').value;
   
   // Update the image source path
-  document.getElementById('targetImage').src = `p/${num}.png`;
+  document.getElementById('pgout').src = `p/${num}.png`;
 });
 
 
