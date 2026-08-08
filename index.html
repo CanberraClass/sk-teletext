@@ -22,24 +22,27 @@
         <h6>© 2026 SkyPeak Mediacorp and Skypeak Brodacasting Corporation All Rights Reserved.</h6>
 
        <script>
-        document.getElementById('pgtxt').addEventListener('submit', function(event) {
-            event.preventDefault();
+        const pgtxt = document.getElementById('pgtxt');
+        const input = document.getElementById('pgin');
+        const output = document.getElementById('pgout');
+
+        // Handle form submission to update the image
+        pgtxt.addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            let num = parseInt(input.value, 10);
             
-            const numInput = document.getElementById('pgin');
-            const imgNum = parseInt(numInput.value, 10);
-            
-            if (imgNum >= 100 && imgNum <= 899) {
-                document.getElementById('pgout').src = 'p/' + imgNum + '.png';
+            if (num >= 100 && num <= 899) {
+                output.src = `p/${num}.png`;
             } else {
-                alert('Page number is from 100 to 899.');
+                alert('Please enter a number between 100 and 899.');
             }
         });
-           
+
         // Handle quick links to update the input field value
         document.querySelectorAll('.link').forEach(link => {
             link.addEventListener('click', function(event) {
                 event.preventDefault();
-                imgNumberInput.value = this.getAttribute('page-link');
+                input.value = this.getAttribute('page-link');
             });
         });
        </script>
