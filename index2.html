@@ -20,5 +20,20 @@
         <a href="#" id="red" style="color: blue;">601</a>
         <a href="#" id="red" style="color: rgb(218, 218, 0);">801</a>
         <h6>© 2026 SkyPeak Mediacorp and Skypeak Brodacasting Corporation All Rights Reserved.</h6>
+
+       <script>
+        document.getElementById('imageForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const numInput = document.getElementById('imageNumber');
+            const imgNum = parseInt(numInput.value, 10);
+            
+            if (imgNum >= 100 && imgNum <= 899) {
+                document.getElementById('displayImage').src = 'p/' + imgNum + '.png';
+            } else {
+                alert('Please enter a number between 100 and 899.');
+            }
+        });
+       </script>
     </body>
 </html>
