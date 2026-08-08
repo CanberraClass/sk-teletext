@@ -23,6 +23,9 @@
         <h6>© 2026 SkyPeak Mediacorp and Skypeak Brodacasting Corporation All Rights Reserved.</h6>
 
        <script>
+        const input = document.getElementById('pgin');
+        const input2 = document.getElementById('pgadd');
+        const output = document.getElementById('pgout');
         const pgtxt = document.getElementById('pgtxt');
         // Handle form submission to update the image
         pgtxt.addEventListener('submit', function(e) {
@@ -31,7 +34,7 @@
             const input2 = document.getElementById('pgadd');
             const output = document.getElementById('pgout');
             if (input <= 100 && input => 899) {
-                displayImage.src = `p/${input1}_${input2}.png`;
+                output.src = `p/${input1}_${input2}.png`;
             } else {
                 alert('Please enter a number between 100 and 899.');
             }
