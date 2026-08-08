@@ -1,42 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>SkyPeak Teletext</title>
-        <script src="page.js"></script>
     </head>
     <body style="font-family: Segoe UI;">
-        <a href="index.html"><img src="img/logo.png" style="width: 100px;"></a>
-        <h1>Welcome to SkyPeak Teletext!</h1>
-        <img id="pgout" src="p/100.png" alt="The Page you typed in is not inside the website" style="width: 600px;">
-        <hr>
-        <form id="pgtxt">
-            <h2>Page Number (P100-P899)</h2>
-            <input type="number" id="pgin" min="100" max="899" style="height:18px; width:50px;" maxlength="3" value="100" required>
-            <input type="number" id="pgadd" style="height:18px; width:50px;" maxlength="2" min="1" value="1" required>
-            <button type="submit">Go!</button>
-        </form>
+        <a href="index.html"><img src="img/logo.png" style="width: 70px; height: 70px;"></a>
+        <h1 style="font-size: 40px;">SkyPeak Teletext is currently Off-Air. You may come back at 6am Singapore Standard Time</h1>
         <br>
         <h4>Colour Page</h4>
-        <a href="" id="link" page-link="101" style="color: red;">101</a>
-        <a href="" id="link" page-link="201" style="color: green;">201</a>
-        <a href="" id="link" page-link="601" style="color: yellow;">601</a>
-        <a href="" id="link" page-link="801" style="color: blue;">701</a>
+        <a href="#" id="red" style="color: red;">101</a>
+        <a href="#" id="red" style="color: green;">201</a>
+        <a href="#" id="red" style="color: blue;">601</a>
+        <a href="#" id="red" style="color: rgb(200, 200, 0);">801</a>
         <h6>© 2026 SkyPeak Mediacorp and Skypeak Brodacasting Corporation All Rights Reserved.</h6>
-
-       <script>
-        // Handle form submission to update the image
-        document.getElementById('pgtxt').addEventListener('submit', function(e) {
-            e.preventDefault(); 
-            const input = document.getElementById('pgin').value;
-            const input2 = document.getElementById('pgadd').value;
-            document.getElementById('pgout').src = `p/${input}_${input2}.png`;
-        });
-        // Handle quick links to update the input field value
-        document.querySelectorAll('.link').forEach(link => {
-            link.addEventListener('click', function(event) {
-                event.preventDefault();
-                document.getElementById('pgin').value = this.getAttribute('page-link');
-            });
-        });
-       </script>
+        <h6>Version Beta 1</h6>
     </body>
 </html>
