@@ -26,17 +26,21 @@
         const input = document.getElementById('pgin');
         const output = document.getElementById('pgout');
 
-        // Handle form submission to update the image
-        pgtxt.addEventListener('submit', function(event) {
-            event.preventDefault(); 
-            let num = parseInt(input.value, 10);
-            
-            if (num >= 100 && num <= 899) {
-                output.src = `p/${num}.png`;
-            } else {
-                alert('Please enter a number between 100 and 899.');
-            }
-        });
+        // Validate number range 100-899
+        if (num < 100 || num > 899) {
+            alert('Please enter a number between 100 and 899.');
+            return;
+        }
+    
+        // Loop to generate multiple sequential images (_1, _2, _3, etc.)
+        for (let i = 1; i <= count; i++) {
+            const img = document.createElement('img');
+            img.src = `p/${num}_${i}.png`;
+        
+        // Append directly to the span without using wrapper divs
+        container.appendChild(img);
+        }
+    });
 
         // Handle quick links to update the input field value
         document.querySelectorAll('.link').forEach(link => {
