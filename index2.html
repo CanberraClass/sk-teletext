@@ -10,7 +10,7 @@
         <hr>
         <form id="pgtxt">
             <h2>Page Number (P100-P899)</h2>
-            <input type="number" id="pgin" min="100" max="899" style="height:18px; width:50px;" maxlength="3" required>
+            <input type="number" id="pgin" min="100" max="899" style="height:18px; width:50px;" maxlength="3" value="100" required>
             <button type="submit">Go!</button>
         </form>
         <br>
@@ -22,16 +22,16 @@
         <h6>© 2026 SkyPeak Mediacorp and Skypeak Brodacasting Corporation All Rights Reserved.</h6>
 
        <script>
-        document.getElementById('imageForm').addEventListener('submit', function(event) {
+        document.getElementById('pgtxt').addEventListener('submit', function(event) {
             event.preventDefault();
             
-            const numInput = document.getElementById('imageNumber');
+            const numInput = document.getElementById('pgin');
             const imgNum = parseInt(numInput.value, 10);
             
             if (imgNum >= 100 && imgNum <= 899) {
-                document.getElementById('displayImage').src = 'p/' + imgNum + '.png';
+                document.getElementById('pgout').src = 'p/' + imgNum + '.png';
             } else {
-                alert('Please enter a number between 100 and 899.');
+                alert('Page number is from 100 to 899.');
             }
         });
        </script>
