@@ -29,8 +29,8 @@
         const output = document.getElementById('pgout');
 
         // Handle form submission to update the image
-        imageForm.addEventListener('submit', function(event) {
-            event.preventDefault(); 
+        imageForm.addEventListener('submit', function(e) {
+            e.preventDefault(); 
             let num1 = parseInt(input.value, 10);
             let num2 = parseInt(input2.value, 10);
             
